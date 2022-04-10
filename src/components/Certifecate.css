@@ -1,0 +1,47 @@
+.certificate .main-tittle {
+  color: #5a487a;
+  margin-bottom: 50px;
+  padding: 0 10%;
+  font-size: 36px;
+  font-weight: bolder;
+}
+.certificate .A2nd-tittle {
+  margin-bottom: 20px;
+}
+.certificate .A3rd-tittle {
+  justify-content: flex-end;
+  display: flex;
+  font-size: 18px;
+}
+.certificate .A4th-tittle {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.certificate .side-tittle {
+  margin-bottom: 20px;
+  justify-content: flex-end;
+  display: flex;
+  font-size: 22px;
+  text-decoration: underline;
+}
+.certificate .A5th-tittle {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.certificate .signal {
+  margin-bottom: 20px;
+}
+Footer .left-col {
+  display: grid;
+  justify-items: flex-start;
+  color: white;
+}
+Footer {
+  background-color: #443e54;
+  padding: 12px;
+}
+Footer .right-col {
+  display: grid;
+  justify-items: flex-end;
+  color: white;
+}
