@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ec046d8c.css",
+    "main.js": "/static/js/main.1922f90b.js",
+    "static/js/787.13353ad0.chunk.js": "/static/js/787.13353ad0.chunk.js",
+    "static/media/logo1.jpg": "/static/media/logo1.6edea06151d642d6739c.jpg",
+    "static/media/paypal.png": "/static/media/paypal.3acce14775b701c605b0.png",
+    "static/media/senaa.jpg": "/static/media/senaa.491c9c896f2486f5d21b.jpg",
+    "index.html": "/index.html",
+    "main.ec046d8c.css.map": "/static/css/main.ec046d8c.css.map",
+    "main.1922f90b.js.map": "/static/js/main.1922f90b.js.map",
+    "787.13353ad0.chunk.js.map": "/static/js/787.13353ad0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec046d8c.css",
+    "static/js/main.1922f90b.js"
+  ]
+}
