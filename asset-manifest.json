@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec046d8c.css",
-    "main.js": "/static/js/main.1922f90b.js",
-    "static/js/787.13353ad0.chunk.js": "/static/js/787.13353ad0.chunk.js",
-    "static/media/logo1.jpg": "/static/media/logo1.6edea06151d642d6739c.jpg",
-    "static/media/paypal.png": "/static/media/paypal.3acce14775b701c605b0.png",
-    "static/media/senaa.jpg": "/static/media/senaa.491c9c896f2486f5d21b.jpg",
-    "index.html": "/index.html",
-    "main.ec046d8c.css.map": "/static/css/main.ec046d8c.css.map",
-    "main.1922f90b.js.map": "/static/js/main.1922f90b.js.map",
-    "787.13353ad0.chunk.js.map": "/static/js/787.13353ad0.chunk.js.map"
+    "main.css": "/cci/static/css/main.cd6cb0c9.css",
+    "main.js": "/cci/static/js/main.5b7a4c0f.js",
+    "static/js/787.13353ad0.chunk.js": "/cci/static/js/787.13353ad0.chunk.js",
+    "static/media/logo1.jpg": "/cci/static/media/logo1.6edea06151d642d6739c.jpg",
+    "static/media/paypal.png": "/cci/static/media/paypal.3acce14775b701c605b0.png",
+    "static/media/senaa.jpg": "/cci/static/media/senaa.491c9c896f2486f5d21b.jpg",
+    "index.html": "/cci/index.html",
+    "main.cd6cb0c9.css.map": "/cci/static/css/main.cd6cb0c9.css.map",
+    "main.5b7a4c0f.js.map": "/cci/static/js/main.5b7a4c0f.js.map",
+    "787.13353ad0.chunk.js.map": "/cci/static/js/787.13353ad0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec046d8c.css",
-    "static/js/main.1922f90b.js"
+    "static/css/main.cd6cb0c9.css",
+    "static/js/main.5b7a4c0f.js"
   ]
 }
