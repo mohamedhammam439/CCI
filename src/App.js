@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 import "./App.css";
 import CurrentCompany from "./components/CurrentCompany";
 import ExistCompany from "./components/ExistCompany";
@@ -21,23 +20,18 @@ const App = () => {
       <div className="app">
         <Sidebar />
         <Routes>
-          <Route path="/CCI" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/cci" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/currentCompany" element={<CurrentCompany />} />
           <Route path="/existCompany" element={<ExistCompany />} />
           <Route path="/newCompany" element={<NewCompany />} />
-          <Route
-            path="/temperory_membership"
-            element={<Temperory_membership />}
-          />
+          <Route path="/temperory_membership" element={<Temperory_membership />} />
           <Route path="/new_membership" element={<New_membership />} />
           <Route path="/motalba" element={<Motalba />} />
           <Route path="/home" element={<Home />} />
           <Route path="/payment" element={<Payment />} />
-          <Route
-            path="/updateSteps"
-            element={<UpdateSteps />}
-          />
+          <Route path="/updateSteps" element={<UpdateSteps />} />
           <Route path="/Certifecate" element={<Certifecate />} />
         </Routes>
       </div>
