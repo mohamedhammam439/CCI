@@ -218,7 +218,7 @@ a {
 }
 .nav-item,
 .nav-link {
-  margin-right: 30px;
+  margin-right: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #655695 !important;
@@ -288,8 +288,8 @@ a {
 }
 .table-bordered > :not(caption) > * > * {
   border-width: 0 1px;
-  max-width: 35vw;
-  min-width: 30vw;
+  /* max-width: 35vw;
+  min-width: 30vw; */
 }
 
 .custom-m {
@@ -317,7 +317,6 @@ a {
   width: 100% !important;
 }
 .material-table {
-  margin-top: 25px;
   text-align: start;
 }
 
@@ -351,6 +350,19 @@ a {
   color: red;
   cursor: pointer;
 }
-.test {
-  color: red;
+.bg-tableColor {
+  background-color: rgb(209, 117, 62, 0.42) !important;
+}
+.bg-inputColor{
+  background-color: transparent !important;
+}
+.noBorderTable input{
+  border: none !important;
+  outline: none !important;
+}
+.noBorderTable input:focus{
+  outline: none !important;
+}
+.width-custom-select{
+  width: 19% !important;
 }

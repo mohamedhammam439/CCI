@@ -1,37 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useRef } from "react";
 import { Form, Table } from "react-bootstrap";
+import { PresentStore } from "../../Contexts/PresentStore";
 
 const MultiSelect = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [list, SetList] = useState([]);
-
+  const [mt1, setMt1] = useState("");
+  const [mt2, setMt2] = useState("");
+  const { addList, list, removeItem } = useContext(PresentStore);
   const FocusFun = useRef(null);
 
   const handelFocus = () => {
     FocusFun.current.focus();
   };
 
-  const handelSubmit = (event) => {
+  const handelSubmitMultiSelect = (event) => {
     event.preventDefault();
-    console.log(name);
-    const data = { name, email };
-    if (name && email) {
-      SetList((ls) => [...ls, data]);
-      setName("");
-      setEmail("");
-    }
+    addList(mt1, mt2);
+    setMt1("");
+    setMt2("");
   };
 
-  const handelDelete = (e) => {
-    let x = e.target.getAttribute("removeName");
-    SetList(list.filter((item) => item.name !== x));
+  const handelDeleteMultiSelect = (e) => {
+    removeItem(e);
   };
 
   return (
     <>
-      <Form className="material-input" onSubmit={handelSubmit}>
+      <Form className="material-input" onSubmit={handelSubmitMultiSelect}>
         <Table bordered>
           <thead>
             <tr>
@@ -45,19 +40,19 @@ const MultiSelect = () => {
                 <Form.Control
                   name="name"
                   autoFocus
-                  value={name}
+                  value={mt1}
                   onChange={(event) => {
-                    setName(event.target.value);
+                    setMt1(event.target.value);
                   }}
                   ref={FocusFun}
                 />
               </td>
               <td>
                 <Form.Control
-                  name="email"
-                  value={email}
+                  name="mt2"
+                  value={mt2}
                   onChange={(event) => {
-                    setEmail(event.target.value);
+                    setMt2(event.target.value);
                   }}
                 />
               </td>
@@ -67,18 +62,18 @@ const MultiSelect = () => {
                 <td>
                   <p>
                     {" "}
-                    {ls.name}
+                    {ls.mt1}
                     <span
                       className="margin-left5"
-                      removeName={ls.name}
-                      onClick={handelDelete}
+                      removeName={ls.mt1}
+                      onClick={handelDeleteMultiSelect}
                     >
                       x
                     </span>{" "}
                   </p>
                 </td>
                 <td>
-                  <p> {ls.email}</p>
+                  <p> {ls.mt2}</p>
                 </td>
               </tr>
             ))}

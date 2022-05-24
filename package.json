@@ -2,7 +2,7 @@
   "name": "cci",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mohamedhammam439.github.io",
+  "homepage": "https://mohamedhammam439.github.io/CCI",
   "dependencies": {
     "-": "^0.0.1",
     "@emotion/react": "^11.8.2",

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState , useContext} from "react";
 import { Form } from "react-bootstrap";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -15,10 +15,15 @@ import UploadForm from "./helpers-component/UploadForm";
 import Motalba from "./helpers-component/Motalba";
 import { Link } from "react-router-dom";
 import PrintCustom from "./helpers-component/PrintCustom";
+import { PresentStore } from "../Contexts/PresentStore";
 const UpdateSteps = (props) => {
   const [activeStep, setActiveStep] = useState(0);
-  const [validated, setValidated] = useState(false);
-
+  // const [validated, setValidated] = useState(false);
+  const {
+    validated,
+    setValidated,
+    
+  } = useContext(PresentStore);
   const steps = [
     "بيانات الأتصال",
     "البيانات الانتاجية",
@@ -26,7 +31,6 @@ const UpdateSteps = (props) => {
     "طباعة البيانات",
     "رفع المستندات",
   ];
-
   function getStepContent(step) {
     switch (step) {
       case 0:
@@ -90,9 +94,7 @@ const UpdateSteps = (props) => {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-  const handleReset = () => {
-    setActiveStep(0);
-  };
+ 
   return (
     <>
       <Logos />

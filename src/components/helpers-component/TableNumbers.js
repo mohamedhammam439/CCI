@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { Form, Table } from "react-bootstrap";
+import { PresentStore } from "../../Contexts/PresentStore";
 const UseFocus = () => {
 	const htmlElRef = useRef(null)
 	const setFocus = () => {htmlElRef.current &&  htmlElRef.current.focus()}
@@ -28,6 +29,7 @@ const TableNumbers =()=> {
   const [input8Ref, setInput8Focus] = UseFocus();
   const [input9Val, setInput9Val] = useState("");
   const [input9Ref, setInput9Focus] = UseFocus();
+  const {setT1,setT2,setT3,setT4,setT5,setT6,setT7,setT8,setT9} = useContext(PresentStore)
   return (
     <Table className="table-update">
       <tbody>
@@ -45,6 +47,7 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput1Val(val)
+                setT1(val)
                 if (val.length===1) setInput2Focus()
               }}
 
@@ -63,6 +66,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput2Val(val)
+                setT2(val)
+
                 if (val.length===1) setInput3Focus()
               }}
 
@@ -81,6 +86,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput3Val(val)
+                setT3(val)
+
                 if (val.length===1) setInput4Focus()
               }}
 
@@ -99,6 +106,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput4Val(val)
+                setT4(val)
+
                 if (val.length===1) setInput5Focus()
               }}
 
@@ -118,6 +127,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput5Val(val)
+                setT5(val)
+
                 if (val.length===1) setInput6Focus()
               }}
             />
@@ -135,6 +146,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput6Val(val)
+                setT6(val)
+
                 if (val.length===1) setInput7Focus()
               }}
 
@@ -153,6 +166,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput7Val(val)
+                setT7(val)
+
                 if (val.length===1) setInput8Focus()
               }}
 
@@ -171,6 +186,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput8Val(val)
+                setT8(val)
+
                 if (val.length===1) setInput9Focus()
               }}
 
@@ -189,6 +206,8 @@ const TableNumbers =()=> {
               onChange={(e)=>{
                 const val = e.target.value 
                 setInput9Val(val)
+                setT9(val)
+
               }}
 
             />

@@ -1,14 +1,6 @@
 import { useState } from "react";
 
-import {
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
-  Table,
-} from "react-bootstrap";
-import Select from "react-select";
+import { Table } from "react-bootstrap";
 import MaterialTable from "./MaterialTable";
 import MultiSelect from "./MultiSelect";
 
@@ -26,21 +18,6 @@ export const NumberCode = [
 ];
 
 const ContactForm = () => {
-  const [validated, setValidated] = useState(false);
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-      setValidated(true);
-      // setShow(false);
-    } else {
-      event.preventDefault();
-      setValidated(true);
-      // setShow(true);
-    }
-  };
-
   return (
     <div>
       <h5>

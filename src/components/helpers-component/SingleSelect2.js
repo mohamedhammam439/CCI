@@ -5,9 +5,8 @@ import { PresentStore } from "../../Contexts/PresentStore";
 
 
 
-const SingleSelect1 = () => {
-  const {select1,ddhandler,colourOptions}= useContext(PresentStore)
-  console.log("select1",select1);
+const SingleSelect2 = () => {
+  const {select2,ddhandler2,colourOptions}= useContext(PresentStore)
   return (
    
       <Select
@@ -16,9 +15,9 @@ const SingleSelect1 = () => {
         options={colourOptions}
         className="basic-multi-select width-single-select"
         classNamePrefix="select"
-        onChange={ddhandler}
+        onChange={ddhandler2}
       />
   );
 };
 
-export default SingleSelect1;
+export default SingleSelect2;

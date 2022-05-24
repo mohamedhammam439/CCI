@@ -1,39 +1,60 @@
+import { useContext } from "react";
+
 import { Row } from "react-bootstrap";
-import {
-    Col,
-    Form,
-    FormControl,
-    InputGroup,
-    Table,
-  } from "react-bootstrap";
-  import Button from "@mui/material/Button";
+import { Col, Form, FormControl, InputGroup, Table } from "react-bootstrap";
+import Button from "@mui/material/Button";
 import SingleSelect from "./SingleSelect";
-import MultiSelect from "./MultiSelect";
-import MaterialTable from "./MaterialTable";
+import MultiSelectPrint from "./MultiSelectPrint";
+import MaterialTablePrint from "./MaterialTablePrint";
+import { PresentStore } from "../../Contexts/PresentStore";
+
 const PrintForm = () => {
+  const {
+    ccn,
+    ccm,
+    mangername,
+    mangerposition,
+    mangertel,
+    mangermob,
+    mangerfax,
+    mangeremail,
+    mangeraddress,
+    headtel,
+    headmob,
+    headfax,
+    heademail,
+    factorytel,
+    factoryfax,
+    workersnum,
+    firstmoney,
+    seglmoney,
+    taxs,
+    moneyval,
+    moneyy1,
+    moneyy2,
+    t1,
+    t2,
+    t3,
+    t4,
+    t5,
+    t6,
+    t7,
+    t8,
+    t9,
+    select1,select2,factoryAddress
+  } = useContext(PresentStore);
   const handelPrint = () => {
-    window.print()
-  }
+    window.print();
+  };
   return (
     <div className="printform">
-   
       <Form.Group className="mb-3 right update-form" controlId="formBasicEmail">
         <Form.Label>عضوية رقم</Form.Label>
-        <Form.Control
-          className="update-input"
-          plaintext
-          readOnly
-          defaultValue="545"
-        />
+        <Form.Control className="update-input" plaintext readOnly value={ccm} />
       </Form.Group>
       <Form.Group className="mb-3 right update-form" controlId="formBasicEmail">
         <Form.Label>أسم المنشأة</Form.Label>
-        <Form.Control
-          className="update-input"
-          plaintext
-          readOnly
-          defaultValue="المنشأة المصرية للصناعات الكيماوية )أيد("
-        />
+        <Form.Control className="update-input" plaintext readOnly value={ccn} />
       </Form.Group>
       <Row>
         <Form.Group
@@ -48,7 +69,7 @@ const PrintForm = () => {
           <Form.Control
             type="text"
             className="width-2"
-            defaultValue="مراد السويفي"
+            value={mangername}
             required
             plaintext
             readOnly
@@ -64,7 +85,7 @@ const PrintForm = () => {
           <Form.Control
             type="text"
             className="width-22"
-            defaultValue="رئيس مجلس الادارة"
+            value={mangerposition}
             required
             plaintext
             readOnly
@@ -81,7 +102,7 @@ const PrintForm = () => {
           <Form.Label>تليفون أرضي</Form.Label>
           <InputGroup className="width-3">
             <FormControl
-              defaultValue="25698745"
+              value={mangertel}
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               type="number"
@@ -104,7 +125,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال رقم الموبايل"
-            defaultValue="01005248795"
+            value={mangermob}
             required
             plaintext
             readOnly
@@ -123,7 +144,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال رقم التليفون"
-            defaultValue="2654832"
+            value={mangerfax}
             required
             plaintext
             readOnly
@@ -136,7 +157,7 @@ const PrintForm = () => {
           type="email"
           className="update-input"
           placeholder="برجاء إدخال البريد الالكتروني"
-          defaultValue="orascom@gmail.com"
+          value={mangeremail}
           required
           plaintext
           readOnly
@@ -148,7 +169,7 @@ const PrintForm = () => {
           type="text"
           className="update-input"
           placeholder="برجاء إدخال عنوان الادارة"
-          defaultValue="128أ شارع الثورة مصر الجديدة"
+          value={mangeraddress}
           required
           plaintext
           readOnly
@@ -164,7 +185,7 @@ const PrintForm = () => {
           <Form.Label>تليفون أرضي</Form.Label>
           <InputGroup className="width-3">
             <FormControl
-              defaultValue="25698745"
+              value={headtel}
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               type="number"
@@ -186,7 +207,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال رقم الموبايل "
-            defaultValue="01223589475"
+            value={headmob}
             required
             plaintext
             readOnly
@@ -205,7 +226,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال رقم الفاكس "
-            defaultValue="2369547"
+            value={headfax}
             required
             plaintext
             readOnly
@@ -221,7 +242,7 @@ const PrintForm = () => {
           type="text"
           className="update-input"
           placeholder="برجاء إدخال موقع المنشأة علي الانترنت "
-          defaultValue="www.sega.eg.com"
+          value={heademail}
           required
           plaintext
           readOnly
@@ -232,13 +253,14 @@ const PrintForm = () => {
         controlId="formBasicPassword"
       >
         <Form.Label>عنوان المصنع</Form.Label>
-        <SingleSelect  />
-        <SingleSelect  />
+       <p className="width-custom-select">{select1}</p>
+       <p className="width-custom-select">{select2}</p>
         <Form.Control
           type="text"
           className="width-44"
           placeholder="برجاء إدخال عنوان الادارة"
           defaultValue="المنطقة الصناعية الثالثة قطعة رقم 12"
+          value={factoryAddress}
           plaintext
           readOnly
         />
@@ -253,7 +275,7 @@ const PrintForm = () => {
           <Form.Label>تليفون أرضي</Form.Label>
           <InputGroup className="width-3">
             <FormControl
-              defaultValue="25698745"
+              value={factorytel}
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               type="number"
@@ -274,7 +296,7 @@ const PrintForm = () => {
             type="number"
             className="width-22"
             placeholder="برجاء إدخال رقم الفاكس "
-            defaultValue="2548795"
+            value={factoryfax}
             required
             plaintext
             readOnly
@@ -294,7 +316,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال عدد العاملين "
-            defaultValue="46"
+            value={workersnum}
             required
             plaintext
             readOnly
@@ -312,7 +334,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال راس المال "
-            defaultValue="2000000"
+            value={firstmoney}
             required
             plaintext
             readOnly
@@ -330,7 +352,7 @@ const PrintForm = () => {
             type="number"
             className="width-3"
             placeholder="برجاء إدخال راس المال "
-            defaultValue="2000000"
+            value={seglmoney}
             required
             plaintext
             readOnly
@@ -349,7 +371,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t1}
                   min={0}
                   max={9}
                   plaintext
@@ -361,7 +383,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t2}
                   min={0}
                   max={9}
                   plaintext
@@ -373,7 +395,18 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t3}
+                  max={9}
+                  plaintext
+                  readOnly
+                />
+              </td>
+              <td>
+                <Form.Control
+                  type="text"
+                  required
+                  maxLength="1"
+                  value={t4}
                   min={0}
                   max={9}
                   plaintext
@@ -385,7 +418,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t5}
                   min={0}
                   max={9}
                   plaintext
@@ -397,7 +430,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t6}
                   min={0}
                   max={9}
                   plaintext
@@ -409,7 +442,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t7}
                   min={0}
                   max={9}
                   plaintext
@@ -421,7 +454,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
+                  value={t8}
                   min={0}
                   max={9}
                   plaintext
@@ -433,19 +466,7 @@ const PrintForm = () => {
                   type="text"
                   required
                   maxLength="1"
-                  defaultValue="5"
-                  min={0}
-                  max={9}
-                  plaintext
-                  readOnly
-                />
-              </td>
-              <td>
-                <Form.Control
-                  type="text"
-                  required
-                  maxLength="1"
-                  defaultValue="5"
+                  value={t9}
                   min={0}
                   max={9}
                   plaintext
@@ -466,7 +487,7 @@ const PrintForm = () => {
             type="number"
             className="width-22"
             placeholder="برجاء إدخال مأمورية الضرائب "
-            defaultValue="65845755"
+            value={taxs}
             required
             plaintext
             readOnly
@@ -488,16 +509,13 @@ const PrintForm = () => {
         <tbody>
           <tr>
             <td>
-              <Form.Control type="text"  plaintext defaultValue="1500000"
-              readOnly />
+              <Form.Control type="text" plaintext value={moneyval} readOnly />
             </td>
             <td>
-              <Form.Control type="text"   plaintext defaultValue="1500000"
-              readOnly/>
+              <Form.Control type="text" plaintext value={moneyy1} readOnly />
             </td>
             <td>
-              <Form.Control type="text"  plaintext defaultValue="1500000"
-              readOnly />
+              <Form.Control type="text" plaintext value={moneyy2} readOnly />
             </td>
           </tr>
         </tbody>
@@ -505,24 +523,22 @@ const PrintForm = () => {
       <h5>
         البيانات المطلوب تعديلها في شهادة العضوية طبقا لاحدث المستندات المتقدمة
       </h5>
-    <MultiSelect />
-      <h5>
-      الخامات المستخدمة طبقا لاحدث المستندات المتقدمة
-    </h5>
-    <Table bordered>
-      <thead>
-        <tr>
-          <th>الخامات المستخدمة</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <MaterialTable />
-          </td>
-        </tr>
-      </tbody>
-    </Table>
+      <MultiSelectPrint />
+      <h5>الخامات المستخدمة طبقا لاحدث المستندات المتقدمة</h5>
+      <Table bordered>
+        <thead>
+          <tr>
+            <th>الخامات المستخدمة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <MaterialTablePrint />
+            </td>
+          </tr>
+        </tbody>
+      </Table>
 
       <Button className="btn" onClick={handelPrint}>
         طباعة

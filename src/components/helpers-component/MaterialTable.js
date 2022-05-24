@@ -1,41 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
+import { PresentStore } from "../../Contexts/PresentStore";
 
 const MaterialTable = () => {
-  const [name, setName] = useState("");
-  const [list, SetList] = useState([]);
+  const [msn, setMsn] = useState("");
+  const {savemsn,addSavedata,removeSavedata} = useContext(PresentStore)
 
   const handelSubmit = (event) => {
     event.preventDefault();
-    const data = { name };
-    if (name) {
-      SetList((ls) => [...ls, data]);
-      setName("");
-    }
+    addSavedata(msn);
+    setMsn('')
   };
   const handelDelete = (e) => {
-    let x = e.target.getAttribute("removeName");
-    SetList(list.filter((item) => item.name !== x));
+    removeSavedata(e)
   };
   return (
     <>
       <Form className="material-input" onSubmit={handelSubmit}>
         <Form.Control
-          name={name}
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          name={msn}
+          value={msn}
+          onChange={(event) => setMsn(event.target.value)}
         />
       </Form>
       <div className="material-table">
-        {list.map((ls) => (
+        {savemsn.map((ls) => (
           <>
             <p>
               {" "}
-              {ls.name}{" "}
+              {ls.msn}{" "}
               <span
                 className="margin-left5"
-                removeName={ls.name}
+                removeName={ls.msn}
                 onClick={handelDelete}
               >
                 x

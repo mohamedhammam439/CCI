@@ -14,7 +14,7 @@ import SingleSelect2 from "./SingleSelect2";
 import SingleSelectNumber from "./SingleSelectNumber";
 import TableNumbers from "./TableNumbers";
 
-const BasicForm = () => {
+const BasicFormTemp = () => {
   const {
     ccn,
     ccm,
@@ -43,15 +43,6 @@ const BasicForm = () => {
   } = useContext(PresentStore);
   return (
     <>
-      <Form.Group className="mb-3 right update-form" controlId="formBasicEmail">
-        <Form.Label>عضوية رقم</Form.Label>
-        <Form.Control
-          className="update-input"
-          plaintext
-          readOnly
-          defaultValue={ccm}
-        />
-      </Form.Group>
       <Form.Group className="mb-3 right update-form" controlId="formBasicEmail">
         <Form.Label>أسم المنشأة</Form.Label>
         <Form.Control
@@ -425,4 +416,4 @@ const BasicForm = () => {
   );
 };
 
-export default BasicForm;
+export default BasicFormTemp;
